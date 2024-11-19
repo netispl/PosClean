@@ -12,3 +12,13 @@
       shell: dd if=/dev/null of=/home/user/.xsession-errors
       environment: "{{ proxy_env }}"
 
+    - name:  Instalacja paczek xkasnet bionic
+      apt:
+        name:
+          - chromium-browser
+          - chromium-browser-l10n
+          - chromium-codecs-ffmpeg-extra
+        state: latest
+        force: yes
+        update_cache: yes
+      environment: "{{ proxy_env }}"
